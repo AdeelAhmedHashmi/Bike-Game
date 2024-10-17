@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code the Game</title>
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+    <header id="top">
+        <nav>
+            <div class="logo"><a href="../chooseLevel.html">Back</a></div>
+            <div class="options">
+                <ul>
+                    <li><a href="#home">HomePage</a></li>
+                    <li><a href="#level">LevelSelection</a></li>
+                    <li><a href="#bike">BikesPage</a></li>
+                    <li><a href="#game">GameStart</a></li>
+                </ul>
+            </div>
+            <div class="responsive">
+                <details>
+                    <summary>Pages</summary>
+                    <div class="detail">
+                        <a href="#home">HomePage</a>
+                        <a href="#level">LevelSelection</a>
+                        <a href="#bike">BikesPage</a>
+                        <a href="#game">GameStart</a>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="intro">
+            <h1>You Want to know that how to make this simple game</h1>
+            <p>In this game three core technologies are used Html ,Css and Javascript</p>
+            <p>Here is the complete code of this game</p>
+            <button>
+                <a href="https://cozip-1.netlify.app">Try Code</a>
+            </button>
+        </div>
+        <div class="coding">
+            <div id="home">
+                <h2>First page's Coding</h2>
+                <code>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+@import url('./jsClasses.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #000;
+    color: aliceblue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+.logo{
+    animation: show 2s 1 linear;
+}
+meter::-webkit-meter-bar{
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0;
+}
+meter::-webkit-meter-optimum-value{
+    background-color: rgb(255, 102, 0)
+}
+meter{
+    width: 60vw;
+}
+button{
+    position: absolute;
+    padding: 3px 19px;
+    border: none;
+    border-radius: 4px;
+    top: 15px;
+    right: 15px;
+    background-color: rgb(255, 145, 0);
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+    &lt;/style&gt;
+    &lt;link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button class="hide"&gt;&lt;a href="./chooseLevel.html"&gt;Go&lt;/a&gt;&lt;/button&gt;
+    &lt;div class="logo"&gt;
+        &lt;img src="./images/logo.png" alt="logo"&gt;
+    &lt;/div&gt;
+    &lt;div class="loader"&gt;
+        &lt;meter value="56" min="0" max="100"&gt;&lt;/meter&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    const meter = document.querySelector('meter');
+    const btn = document.querySelector('button');
+    let value = 0;
+    function loading() {
+        meter.value = value;
+        value += 0.1;
+        if (value < 100) {
+            requestAnimationFrame(loading)
+        }else{
+           window.open('./chooseLevel.html')
+           btn.classList.remove('hide');
+        }
+    }
+    requestAnimationFrame(loading)
+&lt;/script&gt;
+&lt;noscript&gt;Your Browser doest's allow Javascript&lt;/noscript&gt;
+&lt;/html&gt;
+
+                    </pre>
+                </code>
+            </div>
+            <div id="level">
+                <h2>Level Page's Coding</h2><span><a href="#top">Back</a></span>
+                <code>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Level | BikeJump | Game&lt;/title&gt;
+    &lt;style&gt;
+@import url('./jsClasses.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: popins, arial;
+    user-select: none;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+nav{
+    background-color: rgba(190, 12, 12, 0.384);
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+nav .sider{
+    height: 190px;
+    background-color: rgba(0, 255, 191, 0.473);
+    width: 100px;
+    border-radius: 50% 0 0 50%;
+    transform: translate(-20%, -40%) rotate(45deg);
+    position: fixed;
+}
+.sider img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -40%) rotate(-45deg);
+}
+nav .sider img:hover{
+    transform: translate(-30%, -40%)scale(1.1) rotate(-45deg);
+    transition: 0.5s;
+}
+nav .about{
+    position: absolute;
+    color: aliceblue;
+    font-weight: bolder;
+    right: 18px;
+    top: 30%;
+    cursor: pointer;
+}
+main{
+    padding-top: 50px;
+}
+main .container .levels .level img{
+    height: 200px;
+    width: 250px;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 10px;
+}
+main .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .container .levels{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(245, 29, 29);
+    font-weight: 700;
+}
+main .container .levels .level .lev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+main .container .levels .level{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+    &lt;/style&gt;
+    &lt;link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;div class="sider"&gt;&lt;img src="./images/bikelogo.png" alt="hello" &gt;&lt;/div&gt;
+            &lt;div class="about"&gt;&lt;a href="./source/about.html"&gt;?&lt;/a&gt;&lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="levels"&gt;
+                &lt;div class="level"&gt;
+                    &lt;div class="lev"&gt;
+                        &lt;a href="./levels.html"&gt;&lt;img id="./images/bg.PNG" src="./images/bg.PNG" class="easy-level focus" &gt;&lt;/a&gt;
+                        &lt;div class="easy"&gt;Easy Level&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="lev"&gt;
+                        &lt;a href="./levels.html"&gt;&lt;img id="./images/bg2.PNG" src="./images/bg3.PNG" class="hard-level"&gt;&lt;/a&gt;
+                        &lt;div class="hard"&gt;Hard Level&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;script&gt;
+
+const easy = document.querySelector('.easy-level');
+const hard = document.querySelector('.hard-level');
+
+// selected Features 
+function select(){
+    easy.addEventListener('click',()=>{
+        easy.classList.add('focus');
+        hard.classList.remove('focus');
+        storeLevel('easy');
+    });
+    hard.addEventListener('click',(e)=>{
+        hard.classList.add('focus');
+        easy.classList.remove('focus');
+        storeLevel(hard);
+    });
+}
+select()
+
+//store level on localstorage
+function storeLevel(level){
+    if(level == 'easy'){
+        localStorage.setItem('level','easy');
+    }else{
+        localStorage.setItem('level','hard');
+    }
+}
+
+&lt;/script&gt;
+&lt;/html&gt;
+                    </pre>
+                </code>
+            </div>
+            <div id="bike">
+                <h2>Bikes Page's Coding</h2><span><a href="#top">Back</a></span>
+                <code>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Levels | BikeJump&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"&gt;
+    &lt;style&gt;
+@import url('./jsClasses.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    color: aliceblue;
+}
+a{
+    text-decoration: none;
+    color: rgb(231, 7, 7);
+}
+nav{
+    background-color: rgba(190, 12, 12, 0.384);
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+nav .sider{
+    height: 190px;
+    background-color: rgba(0, 255, 191, 0.473);
+    width: 100px;
+    border-radius: 50% 0 0 50%;
+    transform: translate(-20%, -40%) rotate(45deg);
+    position: fixed;
+}
+.sider img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -40%) rotate(-45deg);
+}
+nav .sider img:hover{
+    transform: translate(-30%, -40%)scale(1.1) rotate(-45deg);
+    transition: 0.5s;
+}
+.bikegaragh{
+    height: 400px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+.bikegaragh .floor{
+    background-color: rgba(255, 255, 255, 0.233);
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    bottom: 10px;
+    border-radius: 50%;
+    left: 40px;
+    filter: blur(20px);
+    transition: all 1s linear;
+    transform: rotateX(58deg);
+}
+.bikegaragh .bike{
+    padding-bottom: 80px;
+}
+.lock{
+    position: absolute;
+    top: 120px;
+    left: 70px;
+    opacity: 0.8;
+}
+.back ,.next{
+    font-size: 3rem;
+    font-family: fantasy;
+    cursor: pointer;
+}
+.back:active,.next:active{
+    scale: 0.9;
+}
+.buttons{
+    background-color: antiquewhite;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    display: flex;
+}
+.buttons button{
+    padding: 7px;
+    border: none;
+    width: 80px;
+    position: relative;
+    background-color: transparent;
+    z-index: 3;
+    cursor: pointer;
+    color: brown;
+}
+.buttons .back-btn a{
+    color: aliceblue;
+}
+.buttons .corner{
+    background-color: brown;
+    height: 100px;
+    width: 80px;
+    position: absolute;
+    transform: translate(1px, -50px) rotate(45deg);
+    z-index: 2;
+}
+.coins{
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    height: 17px;
+    width: 60px;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    font-size: 0.8rem;
+    font-family: fantasy;
+}
+.coins .coin img{
+    padding-top: 2px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.coins .coin-no{
+    font-family: fantasy;
+}
+.price{
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+.price img{
+    border-radius: 50%;
+}
+.price span{
+    font-family: fantasy;
+    color: goldenrod;
+}
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;div class="sider"&gt;&lt;img src="./images/bikelogo.png" alt="hello" &gt;&lt;/div&gt;
+            &lt;div class="coins"&gt;
+                &lt;span class="coin"&gt;
+                    &lt;img src="./images/coin.PNG" height="17"&gt;
+                &lt;/span&gt;
+                &lt;span class="coin-no"&gt;000&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;div class="bikegaragh"&gt;
+            &lt;div class="back"&gt; &lt; &lt;/div&gt;
+            &lt;div class="showCase"&gt;
+                &lt;div class="bike"&gt;
+                    &lt;div class="price"&gt;&lt;img src="./images/coin.PNG" height="17"&gt;&lt;span class="value"&gt;0&lt;/span&gt;&lt;/div&gt;
+                    &lt;img class="bike-img" src="./images/bike1.png" height="150px"&gt;
+                    &lt;div class="lock"&gt;
+                        &lt;img src="./images/lock.png" alt=""&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="floor"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="next"&gt; &gt; &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="buttons"&gt;
+            &lt;button class="back-btn"&gt;&lt;a href="./chooseLevel.html"&gt;Back&lt;/a&gt;&lt;/button&gt;
+            &lt;button class="start-btn"&gt;&lt;a href="./game.html"&gt;Go&lt;/a&gt;&lt;/button&gt;
+            &lt;div class="corner"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;script&gt;
+const back = document.querySelector('.back');
+const next = document.querySelector('.next');
+const bike = document.querySelector('.bike .bike-img');
+const gameStartBtn = document.querySelector('.start-btn a');
+const coinBox = document.querySelector('.coin-no');
+const lock = document.querySelector('.lock');
+const price = document.querySelector('.price span');
+const logo = document.querySelector('.sider');
+let bikeNo = 0;
+
+function setBike(url) {
+    localStorage.setItem('bike',url)    
+}
+
+let pattern = JSON.parse(localStorage.getItem('pattern')) || [0,null,null,null,null];
+
+const bikesReserve = [
+    {
+        url: './images/bike1.png',
+        no: 0,
+        price: 0,
+    },
+    {
+        url: './images/bike2.png',
+        no: 1,
+        price: 200
+    },
+    {
+        url: './images/bike3.png',
+        no: 2,
+        price: 600
+    },
+    {
+        url: './images/bike4.png',
+        no: 3,
+        price: 1000
+    },
+    {
+        url: './images/bike5.png',
+        no: 4,
+        price: 2000
+    }
+];
+
+const bikes = JSON.parse(localStorage.getItem('bikes')) || bikesReserve;
+
+localStorage.setItem('bikes',JSON.stringify(bikes));
+// change bike
+next.addEventListener('click', () =&gt; {
+    let bikes = JSON.parse(localStorage.getItem('bikes'))
+    if(bikeNo &lt; bikes.length - 1) {
+        bikeNo ++;
+    }
+    bike.src = bikes[bikeNo].url;
+    price.textContent = bikes[bikeNo].price;
+    setBike(bikes[bikeNo].url);
+    islock(bikeNo);
+});
+back.addEventListener('click', () =&gt; {
+    let bikes = JSON.parse(localStorage.getItem('bikes'))
+    price.textContent = bikes[bikeNo].price;
+    if(bikeNo &gt; 0) {
+        bikeNo --;
+    }
+    bike.src = bikes[bikeNo].url;
+    setBike(bikes[bikeNo].url);
+    islock(bikeNo);
+});
+
+
+// show coins
+function showCoin(){
+    let coins = localStorage.getItem('coin') || 0;
+    coinBox.innerHTML = coins;
+};
+showCoin()
+
+//lock Bike feature
+function islock(bikeNo){
+    let bikes = JSON.parse(localStorage.getItem('bikes'))
+    if(bikeNo == pattern[0]){
+        lock.classList.add('hide');
+    }else if(bikeNo == pattern[1]){
+        lock.classList.add('hide');
+    }else if(bikeNo == pattern[2]){
+        lock.classList.add('hide');
+    }else if(bikeNo == pattern[3]){
+        lock.classList.add('hide');
+    }else if(bikeNo == pattern[4]){
+        lock.classList.add('hide');
+    }else{
+        lock.classList.remove('hide');
+    }
+};
+islock(bikeNo);
+
+//unlock the bike
+function unlock(){
+    let bikes = JSON.parse(localStorage.getItem('bikes'))
+
+    lock.addEventListener('click',()=&gt;{
+        let coin = localStorage.getItem('coin') || 0;
+        let price = JSON.parse(localStorage.getItem('bikes'))[bikeNo].price;
+        
+        if(coin &gt;= price){
+            pattern[bikeNo] = bikeNo;
+            islock(bikeNo)
+            localStorage.setItem('coin', coin - price);
+            localStorage.setItem('pattern', JSON.stringify(pattern));
+            showCoin();
+        }else{
+            lock.classList.add('vibrate');
+            setTimeout(()=&gt;{
+                lock.classList.remove('vibrate');
+            },100)
+        }
+    })
+}
+unlock();
+
+function notOpen(e) {
+    e.preventDefault();
+}
+
+function startGame() {
+    gameStartBtn.addEventListener('click',(e)=&gt;{
+        if(lock.className == 'lock hide'){
+        }else{
+            notOpen(e);
+            lock.classList.add('vibrate');
+            setTimeout(()=&gt;{
+                lock.classList.remove('vibrate');
+            },100)
+        }
+    });
+};
+startGame()
+
+//reset Game
+logo.addEventListener('click',()=>{
+    let permission = confirm('Are you want toreset the game!');
+    if(permission){
+        localStorage.clear();
+    }
+})
+
+&lt;/script&gt;
+&lt;/html&gt;
+                    </pre>
+                </code>
+            </div>
+            <div id="game">
+                <h2>Main Game Page's Coding</h2><span><a href="#top">Back</a></span>
+                <code>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;BikeJump | Game&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;
+    &lt;style&gt;
+@import url('./jsClasses.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+.controls{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    cursor: pointer;
+}
+.controls .up img{
+    height: 100%;
+    width: 100%;
+}
+.controls:active{
+    transform: scale(0.93);
+}
+.container{
+    background-color: rgb(57, 138, 163);
+    height: 300px;
+    width: 350px;
+    position: relative;
+    background-image: url('../images/bg.PNG');
+    background-size: cover;
+    background-origin: padding-box;
+}
+.score-panel{
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-top: 4px;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    position: absolute;
+    color: rgb(65, 3, 3);
+    z-index: 10;
+    top: 0;
+    left: 10px;
+}
+.track{
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.road{
+    position: absolute;
+    background-color: gray;
+    width: 100%;
+    top: 0px;
+    height: 7px;
+    box-shadow:inset 0 0 5px black;
+}
+.stone{
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+}
+.men{
+    position: absolute;
+    bottom: 40px;
+    z-index: 1;
+}
+
+.gameover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.gameover-text{
+    font-size: 2.5rem;
+    padding: 10px;
+    font-family: fantasy;
+    color: brown;
+}
+.gameover-score{
+    font-size: 1rem;
+    font-style: oblique;
+    color: rgb(163, 206, 223);
+}
+.gameover button{
+    padding: 5px 7px;
+    font-size: 0.8rem;
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(251, 253, 251);
+    background-color: rgb(0, 162, 255);
+    border: none;
+    border-radius: 4px;
+    margin-top: 30px;
+    width: 60px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.gameover button:hover{
+    background-color: rgb(0, 128, 255);
+}
+
+.gameover button:active{
+    transform: scale(0.9);
+}
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    font-family: cursive;
+    transform: translate(-50% ,-50%);
+    z-index: 100;
+    opacity: 0;
+    text-align: center;
+}
+@keyframes start {
+    0%{
+        transform: translateY(1px);
+    }    
+}
+@keyframes jump {
+    0%{
+        bottom: 40px;
+    }
+    50%{
+        bottom: 75px;
+    }
+    100%{
+        bottom: 40px;
+    }
+}
+@keyframes come {
+    0%{
+        right: -100px;
+    }    
+    100%{
+        right: 100%;
+    }
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="popup show"&gt;
+            let's start the Game!
+        &lt;/div&gt;
+        &lt;div class="bg"&gt;&lt;/div&gt;  
+        &lt;div class="score-panel"&gt;
+            &lt;div class="score"&gt;Score: &lt;span id="score"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="men start"&gt; 
+            &lt;img src="" alt="0" height="50"&gt;
+        &lt;/div&gt;
+        &lt;div class="track"&gt;
+            &lt;div class="road"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="stone level-1"&gt;
+            &lt;img src="./images/stone.png" alt="0" height="20"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="controls"&gt;
+        &lt;div class="up"&gt;
+            &lt;img src="./images/jump.PNG"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="gameover hide"&gt;
+        &lt;div class="gameover-text"&gt;Game Over&lt;/div&gt;
+        &lt;div class="gameover-score"&gt;Your Score: &lt;span id="gameover-score"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;form&gt;
+            &lt;button type="menu" class="setting-btn"&gt;&lt;a tabindex="1" href="./levels.html"&gt;Back&lt;/a&gt;&lt;/button&gt;
+            &lt;button tabindex="2" type="submit" class="gameover-restart"&gt;Restart&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+const stone = document.querySelector('.stone');
+const score = document.querySelector('#score');
+const men = document.querySelector('.men');
+const jumpbtn = document.querySelector('.controls');
+const gameoverPopup = document.querySelector('.gameover');
+const popUp = document.querySelector('.popup');
+const bike = document.querySelector('.men img');
+const bg = document.querySelector('.container');
+
+function start(){
+    stone.classList.add('stone-animation');
+}
+setTimeout(start,2000);
+
+// render the selected bike & bg
+(function renderBike(){
+    const bikeimg = localStorage.getItem('bike') || './images/bike1.png';
+    const level = localStorage.getItem('level') || 'easy';    
+    if(level == 'easy'){
+        bg.style.backgroundImage = `url('./images/bg.PNG')`;
+    }else{
+        stone.classList.replace('level-1','level-2');
+        bg.style.backgroundImage = `url('./images/bg3.PNG')`;
+    }
+    bike.src = bikeimg;
+})();
+
+// come stone Animation
+stone.addEventListener('animationiteration',(e)=&gt;{
+    const scoreno = Number(score.innerHTML);
+    score.innerHTML = scoreno + 1;
+})
+
+//Level Show Popup
+function Popup(text){
+    popUp.innerText = text;
+    popUp.classList.add('show');
+    setTimeout(()=&gt;{
+        popUp.classList.remove('show');
+    },2000)
+}
+Popup(`Let's Start the Game`);
+
+// jump Animation
+const jumpForDesktop = (e)=&gt;{
+    if(e.key === 'ArrowUp'){
+        men.classList.add('jump');
+        setTimeout(()=&gt;{
+            men.classList.remove('jump');
+        },700)
+    }
+}
+const jumpForMobile = (e)=&gt;{
+    men.classList.add('jump');
+    setTimeout(()=&gt;{
+        men.classList.remove('jump');
+    },700)
+}
+
+window.addEventListener('keydown',jumpForDesktop)
+jumpbtn.addEventListener('click',jumpForMobile);
+document.addEventListener('click',jumpForMobile);
+
+// game logic
+function gameloop() {
+    const stonePosition = stone.offsetLeft;
+    const menPosition = men.offsetTop;
+
+    if(stonePosition &lt;= 50 && menPosition &gt; 193){
+        gameOver(score.innerText);   
+        collect(Number(score.innerText));
+    }
+    requestAnimationFrame(gameloop)
+}
+requestAnimationFrame(gameloop)
+
+//level Change 
+
+function gameOver(score) {
+    score.innerText = 0;   
+    gameoverPopup.classList.remove('hide');    
+    stone.classList.remove('stone-animation');
+    men.classList.remove('start');
+    removeEventListener('keydown',jumpForDesktop);
+    removeEventListener('click',jumpForMobile);
+    function showScore(score) {
+        document.querySelector('.gameover-score').innerText = 'Your Score: ' + score;
+    }
+    showScore(score)
+}
+
+// collect Coin
+
+function collect(add) {
+    let coin = Number(localStorage.getItem('coin')) || 0 ;
+    if(!add == 0){
+        coin = coin + add;
+        localStorage.setItem('coin',coin);
+        console.log('your coin : %d' ,coin);
+    }
+}
+
+&lt;/script&gt;
+&lt;/html&gt;
+                    </pre>
+                </code>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

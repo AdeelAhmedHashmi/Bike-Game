@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+    color: aliceblue;
+}
+header nav{
+    background-color: rgb(148, 3, 3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 4px;
+    font-size: 0.8rem;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 8px;
+}
+div.logo{
+    font-weight: 900;
+    font-size: 1rem;
+    height: 100%;
+    padding-right: 12px;
+    margin-left: 15px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+summary{
+    list-style: none;
+    font-family: fantasy;
+    padding: 5px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+details div{
+    position: absolute;
+    right: 20px;
+    background-color: rgb(148, 8, 8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    row-gap: 3px;
+    box-shadow: 0 0 23px rgba(70, 9, 9, 0.5);
+}
+details div a{
+    width: 100%;
+    padding: 7px 5px;
+    font-size: 0.7rem;
+}
+details a:hover{
+    background-color: rgba(0, 0, 0, 0.151);
+}
+details{
+    display: none;
+}
+@media screen and ( max-width: 444px ){
+    nav .options{
+        display: none;
+    }
+}
+@media screen and ( max-width: 444px ){
+    details{
+        display: block;
+    }
+}
+main{
+    text-align: center;
+}
+.intro h1{
+    font-size: medium;
+    text-align: center;
+    margin: 30px;
+}
+.intro p{
+    font-size: smaller;
+    text-align: center;
+    color: gray;
+}
+.intro button{
+    margin-top: 15px;
+    padding: 5px 15px;
+    background-color: green;
+    border: none;
+    border-radius: 6px;
+}
+.coding{
+    margin-top: 50px;
+}
+.coding span{
+    background-color: rgb(88, 6, 6);
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+}
+.coding h2{
+    color: red;
+    margin: 16px;
+}
+code pre{
+    text-align: left;
+    font-family: consolas,monospace;
+    padding: 10px;
+    color: rgb(56, 209, 56);
+    margin: 20px;
+    border: 1px solid gray;
+    text-wrap: wrap;
+    text-overflow: hidden;
+}
+
+
+

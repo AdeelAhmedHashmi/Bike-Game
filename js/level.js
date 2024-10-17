@@ -5,6 +5,7 @@ const gameStartBtn = document.querySelector('.start-btn a');
 const coinBox = document.querySelector('.coin-no');
 const lock = document.querySelector('.lock');
 const price = document.querySelector('.price span');
+const logo = document.querySelector('.sider');
 let bikeNo = 0;
 
 function setBike(url) {
@@ -134,3 +135,12 @@ function startGame() {
     });
 };
 startGame()
+
+//reset Game
+logo.addEventListener('click',()=>{
+    let permission = confirm('Are you want toreset the game!');
+    if(permission){
+        localStorage.clear();
+        showCoin();
+    }
+})

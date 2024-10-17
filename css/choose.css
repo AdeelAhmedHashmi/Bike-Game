@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: popins, arial;
+    user-select: none;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
 }
 body{
     background-color: black;
@@ -43,6 +48,14 @@ nav .sider{
 nav .sider img:hover{
     transform: translate(-30%, -40%)scale(1.1) rotate(-45deg);
     transition: 0.5s;
+}
+nav .about{
+    position: absolute;
+    color: aliceblue;
+    font-weight: bolder;
+    right: 18px;
+    top: 30%;
+    cursor: pointer;
 }
 main{
     padding-top: 50px;
