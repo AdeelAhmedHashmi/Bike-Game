@@ -1,0 +1,172 @@
+@import url('./jsClasses.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+.controls{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    cursor: pointer;
+}
+.controls:active{
+    transform: scale(0.93);
+}
+.container{
+    background-color: rgb(57, 138, 163);
+    height: 300px;
+    width: 350px;
+    position: relative;
+    background-image: url('../images/bg.PNG');
+    background-size: cover;
+    background-origin: padding-box;
+}
+.score-panel{
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-top: 4px;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    position: absolute;
+    color: rgb(65, 3, 3);
+    z-index: 10;
+    top: 0;
+    left: 10px;
+}
+.track{
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.road{
+    position: absolute;
+    background-color: gray;
+    width: 100%;
+    top: 0px;
+    height: 7px;
+    box-shadow:inset 0 0 5px black;
+}
+.stone{
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+}
+.men{
+    position: absolute;
+    bottom: 40px;
+    z-index: 1;
+}
+
+.gameover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.gameover-text{
+    font-size: 2.5rem;
+    padding: 10px;
+    font-family: fantasy;
+    color: brown;
+}
+.gameover-score{
+    font-size: 1rem;
+    font-style: oblique;
+    color: rgb(163, 206, 223);
+}
+.gameover button{
+    padding: 5px 7px;
+    font-size: 0.8rem;
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(251, 253, 251);
+    background-color: rgb(0, 162, 255);
+    border: none;
+    border-radius: 4px;
+    margin-top: 30px;
+    width: 60px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.gameover button:hover{
+    background-color: rgb(0, 128, 255);
+}
+
+.gameover button:active{
+    transform: scale(0.9);
+}
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    font-family: cursive;
+    transform: translate(-50% ,-50%);
+    z-index: 100;
+    opacity: 0;
+}
+@keyframes start {
+    0%{
+        transform: translateY(1px);
+    }    
+}
+@keyframes jump {
+    0%{
+        bottom: 40px;
+    }
+    50%{
+        bottom: 75px;
+    }
+    100%{
+        bottom: 40px;
+    }
+}
+@keyframes come {
+    0%{
+        right: -100px;
+    }    
+    100%{
+        right: 100%;
+    }
+}
