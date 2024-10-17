@@ -126,6 +126,10 @@ function startGame() {
         if(lock.className == 'lock hide'){
         }else{
             notOpen(e);
+            lock.classList.add('vibrate');
+            setTimeout(()=>{
+                lock.classList.remove('vibrate');
+            },100)
         }
     });
 };
