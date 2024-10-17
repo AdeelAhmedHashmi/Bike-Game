@@ -35,6 +35,10 @@ body{
     font-weight: bolder;
     cursor: pointer;
 }
+.controls .up img{
+    height: 100%;
+    width: 100%;
+}
 .controls:active{
     transform: scale(0.93);
 }
@@ -145,6 +149,7 @@ a{
     transform: translate(-50% ,-50%);
     z-index: 100;
     opacity: 0;
+    text-align: center;
 }
 @keyframes start {
     0%{

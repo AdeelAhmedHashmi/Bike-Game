@@ -6,6 +6,10 @@ const gameoverPopup = document.querySelector('.gameover');
 const popUp = document.querySelector('.popup');
 const bike = document.querySelector('.men img');
 
+function start(){
+    stone.classList.add('stone-animation');
+}
+setTimeout(start,2000);
 // render the selected bike
 (function renderBike(){
     const bikeimg = localStorage.getItem('bike') || './images/bike1.png';
@@ -26,7 +30,7 @@ function Popup(text){
         popUp.classList.remove('show');
     },2000)
 }
-Popup('Level 1');
+Popup(`Let's Start the Game`);
 
 // jump Animation
 const jumpForDesktop = (e)=>{
