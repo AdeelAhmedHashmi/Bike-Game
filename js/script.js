@@ -5,14 +5,23 @@ const jumpbtn = document.querySelector('.controls');
 const gameoverPopup = document.querySelector('.gameover');
 const popUp = document.querySelector('.popup');
 const bike = document.querySelector('.men img');
+const bg = document.querySelector('.container');
 
 function start(){
     stone.classList.add('stone-animation');
 }
 setTimeout(start,2000);
-// render the selected bike
+
+// render the selected bike & bg
 (function renderBike(){
     const bikeimg = localStorage.getItem('bike') || './images/bike1.png';
+    const level = localStorage.getItem('level') || 'easy';    
+    if(level == 'easy'){
+        bg.style.backgroundImage = `url('./images/bg.PNG')`;
+    }else{
+        stone.classList.replace('level-1','level-2');
+        bg.style.backgroundImage = `url('./images/bg3.PNG')`;
+    }
     bike.src = bikeimg;
 })();
 

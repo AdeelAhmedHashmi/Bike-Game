@@ -13,19 +13,7 @@
     animation-duration: 2s;
 }
 .level-2{
-    animation-duration: 1.7s;
-}
-.level-3{
-    animation-duration: 1.4s;
-}
-.level-4{
-    animation-duration: 1.1s;
-}
-.level-5{
-    animation-duration: 0.8s;
-}
-.level-6{
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 }
 .start{
     animation: start 0.2s infinite linear;
@@ -35,6 +23,10 @@
 }
 .vibrate{
     animation: vibrate 0.1s 2 linear;
+}
+.focus{
+    outline: 3px solid green;
+    border: none !important;
 }
 @keyframes vibrate {
     0%{
