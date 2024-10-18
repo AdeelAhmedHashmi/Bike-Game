@@ -87,12 +87,20 @@ main{
     text-align: center;
     color: gray;
 }
+.intro a {
+    color: gray;
+    text-decoration: underline;
+}
 .intro button{
     margin-top: 15px;
     padding: 5px 15px;
     background-color: green;
     border: none;
     border-radius: 6px;
+}
+.intro button a {
+    color: white;
+    text-decoration: none;
 }
 .coding{
     margin-top: 50px;
